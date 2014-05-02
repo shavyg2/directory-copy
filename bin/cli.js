@@ -19,28 +19,24 @@
       this.reader = require("node-dir");
       this.base = path.resolve(this.input);
       this.log = this.log.bind(this);
-      process.log = console.log;
-      process.log("base is now " + this.base);
+      console.log("base is now " + this.base);
       this.getFiles();
-      if (verbose) {
-        console.log(this.message);
-      }
     }
 
     DirectoryCopy.prototype.getFiles = function() {
       return this.reader.files(this.base, (function(_this) {
         return function(err, files) {
           var f, fp, input, output, _i, _len, _results;
-          process.log("got the files and the length is " + files.length);
+          console.log("got the files and the length is " + files.length);
           _results = [];
           for (_i = 0, _len = files.length; _i < _len; _i++) {
             f = files[_i];
-            process.log("processing " + f);
+            console.log("processing " + f);
             fp = path.relative(_this.input, f);
-            process.log("the file is " + fp);
+            console.log("the file is " + fp);
             input = path.resolve(_this.base, f);
             output = path.resolve(process.cwd(), _this.output, fp);
-            process.log("we are moving from " + input + " to " + output);
+            console.log("we are moving from " + input + " to " + output);
             _results.push(_this.writeFiles(input, output));
           }
           return _results;
@@ -58,10 +54,10 @@
       }, (function(_this) {
         return function(err, data) {
           if (err) {
-            process.log("we have an error");
-            process.log(err.toString());
+            console.log("we have an error");
+            console.log(err.toString());
           } else {
-            process.log("no error processing " + input + " to " + output);
+            console.log("no error processing " + input + " to " + output);
           }
           if (typeof data === "undefined") {
             data = "";
@@ -69,7 +65,7 @@
           console.log();
           return mkdirp(path.dirname(output), function() {
             return fs.writeFile(output, data, null, function() {
-              return process.log("file saved, " + output);
+              return console.log("file saved, " + output);
             });
           });
         };
