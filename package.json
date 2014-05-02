@@ -1,0 +1,30 @@
+{
+  "name": "directory-copy",
+  "version": "0.0.1",
+  "description": "Copy the content of one directory to the next destination",
+  "main": "lib/application.js",
+  "bin": {
+    "directory-copy": "cli.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "beast-test": "~0.0.14",
+    "mkdirp": "~0.4.0",
+    "node-dir": "~0.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "copy",
+    "directory",
+    "beast",
+    "javascript",
+    "beastjavascript"
+  ],
+  "author": "Shavauhn Gabay",
+  "license": "MIT"
+}
