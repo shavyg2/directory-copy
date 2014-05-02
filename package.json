@@ -1,20 +1,16 @@
 {
-  "name": "directory-copy",
-  "version": "0.0.1",
+  "name": "d-copy",
+  "version": "0.0.3",
   "description": "Copy the content of one directory to the next destination",
   "main": "lib/application.js",
-  "bin": {
-    "directory-copy": "cli.js"
-  },
-  "directories": {
-    "test": "test"
-  },
+
   "dependencies": {
-    "beast-test": "~0.0.14",
     "mkdirp": "~0.4.0",
     "node-dir": "~0.1.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+      "beast-test": "~0.0.14"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,5 +22,13 @@
     "beastjavascript"
   ],
   "author": "Shavauhn Gabay",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shavyg2/directory-copy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shavyg2/directory-copy/issues"
+  },
+  "homepage": "https://github.com/shavyg2/directory-copy"
 }
