@@ -18,7 +18,6 @@
       this.message = "";
       this.reader = require("node-dir");
       this.base = path.resolve(this.input);
-      this.log = this.log.bind(this);
       console.log("base is now " + this.base);
       debugger;
     }

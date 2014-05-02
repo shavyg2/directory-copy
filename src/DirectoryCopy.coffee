@@ -7,7 +7,6 @@ class DirectoryCopy
     @message=""
     @reader= require "node-dir"
     @base=path.resolve(@input)
-    @log=@log.bind(@)
     console.log "base is now #{@base}"
     `debugger`
 
