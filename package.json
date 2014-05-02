@@ -1,6 +1,6 @@
 {
   "name": "d-copy",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "description": "Copy the content of one directory to the next destination",
   "main": "lib/application.js",
   "dependencies": {
