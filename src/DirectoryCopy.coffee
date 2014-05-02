@@ -10,31 +10,31 @@ class DirectoryCopy
     console.log "base is now #{@base}"
     `debugger`
 
-  writeFiles:(input,output)->
-    `debugger`
-    fs.readFile(input,{encoding:"utf8"},(err,data)->
-      if err
-        console.log "we have an error"
-      else
-        console.log "no error processing #{input} to #{output}"
-      if typeof data is "undefined"
-        data="";
-      console.log()
-      mkdirp(path.dirname(output),->
-        fs.writeFile(output,data,null,->
-          console.log("file saved, #{output}")
-        )
-      )
-    );
-
 
   getFiles:->
     `debugger`
+    reader=require "node-dir"
     base=@base
     input=@input
     output=@output
-    writeFiles= @writeFiles
-    @reader.files(@base,(err,files)->
+    writeFiles= (input,output)->
+      `debugger`
+      fs.readFile(input,{encoding:"utf8"},(err,data)->
+        if err
+          console.log "we have an error"
+        else
+          console.log "no error processing #{input} to #{output}"
+        if typeof data is "undefined"
+          data="";
+        console.log()
+        mkdirp(path.dirname(output),->
+          fs.writeFile(output,data,null,->
+            console.log("file saved, #{output}")
+          )
+        )
+      );
+
+    reader.files(@base,(err,files)->
       `debugger`
       console.log "got the files and the length is #{files.length}"
       for f in files
