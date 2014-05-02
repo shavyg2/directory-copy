@@ -10,6 +10,7 @@ new (class DCTest extends TestCase
     new DirectoryCopy("source","destination",true)
 
   testDC:(dc)->
+    dc.getFiles();
 )
 
 console.log TestCase.getResult();

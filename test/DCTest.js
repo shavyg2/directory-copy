@@ -19,7 +19,9 @@
       return new DirectoryCopy("source", "destination", true);
     };
 
-    DCTest.prototype.testDC = function(dc) {};
+    DCTest.prototype.testDC = function(dc) {
+      return dc.getFiles();
+    };
 
     return DCTest;
 
