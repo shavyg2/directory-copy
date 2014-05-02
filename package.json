@@ -1,6 +1,6 @@
 {
   "name": "d-copy",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Copy the content of one directory to the next destination",
   "main": "lib/application.js",
   "dependencies": {
@@ -29,5 +29,11 @@
   "bugs": {
     "url": "https://github.com/shavyg2/directory-copy/issues"
   },
-  "homepage": "https://github.com/shavyg2/directory-copy"
+  "homepage": "https://github.com/shavyg2/directory-copy",
+  "bin": {
+    "d-copy": "cli.js"
+  },
+  "directories": {
+    "test": "test"
+  }
 }
