@@ -1,4 +1,4 @@
-DirectoryCopy = require("../bin/cli.js").DirectoryCopy
+DirectoryCopy = require("../lib/application.js").DirectoryCopy
 
 TestCase = require("beast-test").TestCase
 
