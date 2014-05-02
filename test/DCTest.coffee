@@ -7,6 +7,7 @@ new (class DCTest extends TestCase
     super()
 
   base:->
+    debugger
     new DirectoryCopy("source","destination",true)
 
   testDC:(dc)->

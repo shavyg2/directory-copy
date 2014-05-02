@@ -16,6 +16,7 @@
     }
 
     DCTest.prototype.base = function() {
+      debugger;
       return new DirectoryCopy("source", "destination", true);
     };
 

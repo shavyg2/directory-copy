@@ -12,7 +12,6 @@ class DirectoryCopy
 
 
   getFiles:->
-    `debugger`
     reader=require "node-dir"
     base=@base
     input=@input
@@ -33,6 +32,13 @@ class DirectoryCopy
           )
         )
       );
+
+    if typeof weiteFiles is "undefined"
+      debugger
+      #what the hell is going on
+    else
+      debugger
+      #everything is fine
 
     reader.files(@base,(err,files)->
       `debugger`
