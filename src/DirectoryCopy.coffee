@@ -8,7 +8,6 @@ class DirectoryCopy
     @reader= require "node-dir"
     @base=path.resolve(@input)
     console.log "base is now #{@base}"
-    `debugger`
 
 
   getFiles:->
@@ -17,45 +16,27 @@ class DirectoryCopy
     input=@input
     output=@output
     writeFiles= (input,output)->
-      `debugger`
+      debugger
       fs.readFile(input,{encoding:"utf8"},(err,data)->
-        if err
-          console.log "we have an error"
-        else
-          console.log "no error processing #{input} to #{output}"
         if typeof data is "undefined"
           data="";
-        console.log()
         mkdirp(path.dirname(output),->
           fs.writeFile(output,data,null,->
-            console.log("file saved, #{output}")
+            console.log("file created, #{output}")
           )
         )
       );
 
-    if typeof weiteFiles is "undefined"
-      debugger
-      #what the hell is going on
-    else
-      debugger
-      #everything is fine
-
-    reader.files(@base,(err,files)->
-      `debugger`
-      console.log "got the files and the length is #{files.length}"
+    callback=(err,files)->
       for f in files
-        console.log "processing #{f}"
         fp=path.relative(input,f)
-        console.log "the file is #{fp}"
         input=path.resolve(base,f)
         output=path.resolve(process.cwd(),output,fp)
-        console.log "we are moving from #{input} to #{output}"
         writeFiles(input,output)
-    )
+    reader.files(@base, callback);
 
   log:(text)->
     @message+="#{text}\n";
-
 
 
 exports.DirectoryCopy=DirectoryCopy
